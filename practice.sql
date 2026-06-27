@@ -59,7 +59,7 @@ insert into user_info(user_id, user_name,phone_number,DOB) values("0001", "Prave
  delete from post_info where user_id="0001";
  delete from user_info where user_id="0001"; #we canot perform this because child table have relation 
  
- commit;
+ commit; #save
  
  select * from post_info;
  select * from user_info;
@@ -80,7 +80,7 @@ insert into user_info(user_id, user_name,phone_number,DOB) values("0001", "Prave
  
  #logical operators
  #and,or,not
- #between,is, like not like
+ #between,is, like, not like
  
  #aggregate functions
  #count, sum, avg, min, max etc
