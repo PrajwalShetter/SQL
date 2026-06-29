@@ -515,4 +515,40 @@ SELECT MIN(brand_rating) FROM brand_hub;
 SELECT MIN(payment_amount) FROM payment_hub;
 SELECT MIN(rating) FROM review_hub;
 
+use omnistore;
+show tables;
+
+select * from order_center;
+select * from payment_hub;
+
+#cross join
+select * from order_center cross join payment_hub; # select * from table 1 cross join table 2
+
+# inner join
+select * from payment_hub ph inner join review_hub rh where ph.payment_id = rh.payment_id; # use column also
+#  syntax = select * from table1 t1 inner join table2 t2 where t1.col= t2.col;
+
+# outter join -- here we are not using where , we use on keyword
+# left join
+select * from payment_hub ph left join review_hub rh on ph.payment_status = rh.review_status;
+#syntax = select * from table1 t1 left join table2 t2 on condition;
+
+#right join
+select * from payment_hub ph right join review_hub rh on ph.payment_status = rh.review_status;
+
+# full join
+select * from payment_hub ph left join review_hub rh on ph.payment_status = rh.review_status union select * from payment_hub ph right join review_hub rh on ph.payment_status = rh.review_status;
+
+#self join
+select * from payment_hub self join payment_hub;
+
+#subqueries
+select category_name, tax_percentage from category_hub  in(select brand_id=5 from 
+
+select min(tax_percentage) from category_hub;
+
+select min(payment_amount) from payment_hub where payment_amount>(select min(payment_amount) from payment_hub);
+
+#limit and offset
+select * from payment_hub order by payment_amount  limit 1 offset 4; #limit used for how many rows print offset is used for skip the rows 
 
