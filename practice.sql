@@ -85,7 +85,13 @@ insert into user_info(user_id, user_name,phone_number,DOB) values("0001", "Prave
  #aggregate functions
  #count, sum, avg, min, max etc
  
- #group by- having
+ #group by- having, order by
+ 
+ #3rd day
+ desc user_info;
+ desc post_info;
+ 
+create table comment_info(comment_id int primary key, comment_code varchar(25), user_id int, post_id, comment_status Enum("Hidden", "Visible"), foreign key)
 
 
 
